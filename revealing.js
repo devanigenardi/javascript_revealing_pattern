@@ -1,18 +1,36 @@
-var module = (function() {
-
-    var private = function() {
-       var a = Math.floor((Math.random()* 1000) + 1);
-        console.log(a);
+var elememnt = document.getElementsByClassName('class1');
+var toggle = (function(){
+    
+    var private = function(){
+        
+        
     };
-
-    var public = function() {
-        private();
+    
+    var public = function(){
+        
+            function toggleclass(){
+                for (var i = 0; i < elememnt.length; i++){
+                elememnt[i].addEventListener("click", function(){
+                    if(this.className == "class1"){
+                        this.className = "class2";
+                    } else {
+                        this.className = "class1";
+                    }
+                });
+            }
+                
+        }
+        toggleclass();
+        
     };
     
     return {
-        public: public 
-    };
-
+        public: public
+    }
+    
 })();
 
-module.public();
+toggle.public();
+
+
+
